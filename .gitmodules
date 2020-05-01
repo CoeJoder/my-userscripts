@@ -1,0 +1,3 @@
+[submodule "lib/waitForKeyElements.js"]
+	path = lib/waitForKeyElements.js
+	url = https://github.com/CoeJoder/waitForKeyElements.js.git
