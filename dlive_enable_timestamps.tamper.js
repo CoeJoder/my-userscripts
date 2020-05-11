@@ -49,10 +49,10 @@
 	
 	// handle AJAX-loaded replay pages
 	// required even if starting page is a replay page in order to handle future navigations
-	var prevHref = document.location.href;
+	let prevHref = document.location.href;
 	window.addEventListener("load", (event) => {
-		var bodyList = document.querySelector("body")
-		var observer = new MutationObserver(function(mutations) {
+		const bodyList = document.querySelector("body")
+		const observer = new MutationObserver(function(mutations) {
 			mutations.forEach(function(mutation) {
 				if (prevHref != document.location.href) {
 					prevHref = document.location.href;
@@ -62,7 +62,7 @@
 				}
 			});
 		});
-		var config = {
+		const config = {
 			childList: true,
 			subtree: true
 		};
