@@ -6,7 +6,7 @@
 // @author       CoeJoder
 // @match        *://dlive.tv/*
 // @grant        none
-// @require      https://cdn.jsdelivr.net/gh/CoeJoder/waitForKeyElements.js@v1.0/waitForKeyElements.js
+// @require      https://cdn.jsdelivr.net/gh/CoeJoder/waitForKeyElements.js@v1.2/waitForKeyElements.js
 // ==/UserScript==
 
 // TODO works for replays; enable for clips too
