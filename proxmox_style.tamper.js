@@ -6,29 +6,13 @@
 // @author       CoeJoder
 // @match        https://www.proxmox.com/*
 // @grant        none
+// @require      https://cdn.jsdelivr.net/gh/CoeJoder/userscriptUtils.js@v1.0/userscriptUtils.js
 // ==/UserScript==
 
 (function() {
-    function addStylesheet(href) {
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        document.getElementsByTagName('head')[0].appendChild(link);
-    }
+    const utils = new UserscriptUtils();
 
-    function addCss(css) {
-        var style = document.createElement('style');
-        style.type ='text/css';
-        if (style.styleSheet) {
-            style.styleSheet.cssText = css;
-        }
-        else {
-            style.appendChild(document.createTextNode(css));
-        }
-        document.getElementsByTagName('head')[0].appendChild(style);
-    }
-
-    addCss(`
+    utils.addCss(`
         * {
             color: lightgray;
             background-color: darkslategray;

@@ -6,12 +6,14 @@
 // @author       CoeJoder
 // @match        *://dlive.tv/*
 // @grant        none
-// @require      https://cdn.jsdelivr.net/gh/CoeJoder/waitForKeyElements.js@v1.2/waitForKeyElements.js
+// @require      https://cdn.jsdelivr.net/gh/CoeJoder/userscriptUtils.js@v1.0/userscriptUtils.js
 // ==/UserScript==
 
 // TODO works for replays; enable for clips too
 
 (function() {
+
+    const utils = new UserscriptUtils();
 	
 	function isReplayPage() {
 		return window.location.pathname.startsWith("/p/");
@@ -39,7 +41,7 @@
 		const commentsSelector = ".font-subtitle.mt-3 div";
 		const waitOnce = true;
 		const interval = 200;
-		waitForKeyElements(commentsSelector, processComments, waitOnce, interval);	
+		utils.waitForKeyElements(commentsSelector, processComments, waitOnce, interval);
 	}
 	
 	// check if the starting page is a replay page
@@ -51,7 +53,7 @@
 	// required even if starting page is a replay page in order to handle future navigations
 	let prevHref = document.location.href;
 	window.addEventListener("load", (event) => {
-		const bodyList = document.querySelector("body")
+		const bodyList = document.querySelector("body");
 		const observer = new MutationObserver(function(mutations) {
 			mutations.forEach(function(mutation) {
 				if (prevHref != document.location.href) {

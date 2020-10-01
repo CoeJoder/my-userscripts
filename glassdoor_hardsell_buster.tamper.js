@@ -6,25 +6,15 @@
 // @author       CoeJoder
 // @match        *://www.glassdoor.com/Reviews/*
 // @grant        none
-// @require      https://cdn.jsdelivr.net/gh/CoeJoder/waitForKeyElements.js@v1.2/waitForKeyElements.js
+// @require      https://cdn.jsdelivr.net/gh/CoeJoder/userscriptUtils.js@v1.0/userscriptUtils.js
 // ==/UserScript==
 
 (() => {
-    function addCss(css) {
-        var style = document.createElement('style');
-        style.type ='text/css';
-        if (style.styleSheet) {
-            style.styleSheet.cssText = css;
-        }
-        else {
-            style.appendChild(document.createTextNode(css));
-        }
-        document.getElementsByTagName('head')[0].appendChild(style);
-    }
+    const utils = new UserscriptUtils();
 
 	// show full text of reviews
 	// hide nag buttons
-    addCss(`
+    utils.addCss(`
     	p.v2__EIReviewDetailsV2__isCollapsed {
     		max-height: none;
     	}
@@ -43,7 +33,7 @@
 	let waitOnce = true;
 	let interval = 300;
 	let maxIntervals = 100;
-	waitForKeyElements("#ContentWallHardsell", (wall) => {
+	utils.waitForKeyElements("#ContentWallHardsell", (wall) => {
 		wall.remove();
 		// disable scroll-blocking
 		// (scroll-blocking is performed late in the page load, so wrap it in a setTimeout)
