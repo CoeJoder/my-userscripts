@@ -10,5 +10,5 @@
 
 const box = document.querySelector("#clarify-box");
 if (box) {
-	box.remove();
+    box.remove();
 }
