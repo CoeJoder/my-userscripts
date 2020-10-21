@@ -1,6 +1,6 @@
 [submodule "lib/waitForKeyElements.js"]
 	path = lib/waitForKeyElements.js
 	url = https://github.com/CoeJoder/waitForKeyElements.js.git
-[submodule "lib/userscriptUtils.js"]
-	path = lib/userscriptUtils.js
-	url = https://github.com/CoeJoder/userscriptUtils.js.git
+[submodule "lib/GM_wrench"]
+	path = lib/GM_wrench
+	url = https://github.com/CoeJoder/GM_wrench.git
