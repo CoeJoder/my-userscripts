@@ -1,19 +1,17 @@
 // ==UserScript==
 // @name         glassdoor.com: hard-sell wall buster
 // @namespace    https://www.glassdoor.com
-// @version      0.1
+// @version      0.2
 // @description  Allows browsing of glassdoor.com reviews without compromising privacy.
 // @author       CoeJoder
 // @match        *://www.glassdoor.com/Reviews/*
 // @grant        none
-// @require      https://cdn.jsdelivr.net/gh/CoeJoder/userscriptUtils.js@v1.0/userscriptUtils.js
+// @require      https://cdn.jsdelivr.net/gh/CoeJoder/GM_wrench@v1.0/dist/GM_wrench.min.js
 // ==/UserScript==
 
 (() => {
-    const utils = new UserscriptUtils();
-
     // show full text of reviews hide nag buttons
-    utils.addCss(`
+    GM_wrench.addCss(`
         p.v2__EIReviewDetailsV2__isCollapsed {
             max-height: none;
         }
@@ -32,7 +30,7 @@
     let waitOnce = true;
     let interval = 300;
     let maxIntervals = 100;
-    utils.waitForKeyElements("#ContentWallHardsell", (wall) => {
+    GM_wrench.waitForKeyElements("#ContentWallHardsell", (wall) => {
         wall.remove();
         // disable scroll-blocking (scroll-blocking is performed late in the page load, so wrap it in a setTimeout)
         setTimeout(() => {

@@ -1,20 +1,18 @@
 // ==UserScript==
 // @name         dlive: enable timestamps
 // @namespace    https://dlive.tv
-// @version      0.1
+// @version      0.2
 // @description  Turn timestamps in the comment section into seekable links, similar to how YouTube does it.
 // @author       CoeJoder
 // @match        *://dlive.tv/*
 // @grant        none
-// @require      https://cdn.jsdelivr.net/gh/CoeJoder/userscriptUtils.js@v1.0/userscriptUtils.js
+// @require      https://cdn.jsdelivr.net/gh/CoeJoder/GM_wrench@v1.0/dist/GM_wrench.min.js
 // ==/UserScript==
 
 // TODO works for replays; enable for clips too
 
 (function() {
 
-    const utils = new UserscriptUtils();
-    
     function isReplayPage() {
         return window.location.pathname.startsWith("/p/");
     }
@@ -41,7 +39,7 @@
         const commentsSelector = ".font-subtitle.mt-3 div";
         const waitOnce = true;
         const interval = 200;
-        utils.waitForKeyElements(commentsSelector, processComments, waitOnce, interval);
+        GM_wrench.waitForKeyElements(commentsSelector, processComments, waitOnce, interval);
     }
     
     // check if the starting page is a replay page

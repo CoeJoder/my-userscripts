@@ -1,18 +1,16 @@
 // ==UserScript==
 // @name         Poloniex -- calc sum
 // @namespace    https://poloniex.com
-// @version      0.1
+// @version      0.2
 // @description  Calculate sums of selected table values.
 // @author       CoeJoder
 // @match        https://poloniex.com/exchange*
 // @grant        none
-// @require      https://cdn.jsdelivr.net/gh/CoeJoder/userscriptUtils.js@v1.0/userscriptUtils.js
+// @require      https://cdn.jsdelivr.net/gh/CoeJoder/GM_wrench@v1.0/dist/GM_wrench.min.js
 // ==/UserScript==
 
 (function($) {
-    const utils = new UserscriptUtils();
-
-    utils.addCss(`
+    GM_wrench.addCss(`
         td[data-selected-sum="true"] {
             background-color: aquamarine;
         }
