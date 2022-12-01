@@ -9,4 +9,4 @@
 // @grant              none
 // ==/UserScript==
 
-window.location.replace("https://nitter.net" + window.location.pathname + window.location.search);
+window.location.replace("https://nitter.moomoo.me" + window.location.pathname + window.location.search);
