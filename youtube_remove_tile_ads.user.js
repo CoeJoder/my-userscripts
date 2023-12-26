@@ -28,7 +28,7 @@
 			background-repeat: no-repeat;
 			background-attachment: inherit;
 			background-position: bottom; 
-			background-image: url("${absolutely_comped}")
+			background-image: url("${absolutely_comped}");
 		}
 	`);
 })(GM_wrench);
