@@ -10,21 +10,22 @@
 // @require      https://cdn.jsdelivr.net/gh/CoeJoder/GM_wrench@v1.4/dist/GM_wrench.min.js
 // @resource     absolutely_comped https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/resources/images/absolutely_comped.png
 // ==/UserScript==
-(async function({isCssSelectorSupported, addCss}) {
+(async function ({ isCssSelectorSupported, addCss }) {
 
-	if (!isCssSelectorSupported(':has(x)')) {
-		throw new Error("Browser does not support the ':has(x)' pseodoselector, please upgrade.");
-	}
+    if (!isCssSelectorSupported(':has(x)')) {
+        throw new Error("Browser does not support the ':has(x)' pseodoselector, please upgrade.");
+    }
 
-	const absolutely_comped = await GM.getResourceUrl('absolutely_comped');
+    const absolutely_comped = await GM.getResourceUrl('absolutely_comped');
 
-	addCss(`
+    addCss(`
 		/* Replaces ad tiles with ABSOLUTELY COMPED meme */
 	
 		ytd-ad-slot-renderer {
 			display: none;
 		}
 		.ytd-rich-item-renderer:has(> ytd-ad-slot-renderer) {
+            opacity: 0.5;
 			background-repeat: no-repeat;
 			background-attachment: inherit;
 			background-position: bottom; 
