@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         dlive: enable timestamps
-// @namespace    https://dlive.tv
-// @version      0.2
+// @namespace    https://github.com/CoeJoder/my-userscripts
+// @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/dlive_enable_timestamps.user.js
+// @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/dlive_enable_timestamps.user.js
+// @version      0.3
 // @description  Turn timestamps in the comment section into seekable links, similar to how YouTube does it.
 // @author       CoeJoder
 // @match        *://dlive.tv/*

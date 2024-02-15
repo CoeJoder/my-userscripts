@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         YouTube: remove propaganda box
-// @namespace    https://www.youtube.com
-// @version      0.1
+// @namespace    https://github.com/CoeJoder/my-userscripts
+// @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/youtube_remove_propaganda_box.user.js
+// @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/youtube_remove_propaganda_box.user.js
+// @version      0.3
 // @description  Removes the propaganda box that Big Brother places under "controversial" videos.
 // @author       CoeJoder
 // @match        *://www.youtube.com/watch?*

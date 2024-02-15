@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         pypi.org: page reloader
-// @namespace    https://pypi.org/
-// @version      0.1
+// @namespace    https://github.com/CoeJoder/my-userscripts
+// @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/pypi_reloader.user.js
+// @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/pypi_reloader.user.js
+// @version      0.2
 // @description  Reloads the page immediately so that proper Dark Reader styling is applied.
 // @author       CoeJoder
 // @match        *://pypi.org/*

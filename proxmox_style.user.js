@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         Proxmox style
-// @namespace    https://www.proxmox.com
-// @version      0.2
+// @namespace    https://github.com/CoeJoder/my-userscripts
+// @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/proxmox_style.user.js
+// @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/proxmox_style.user.js
+// @version      0.3
 // @description  Improve text readability.
 // @author       CoeJoder
 // @match        https://www.proxmox.com/*

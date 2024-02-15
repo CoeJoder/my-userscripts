@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         glassdoor.com: hard-sell wall buster
-// @namespace    https://www.glassdoor.com
+// @namespace    https://github.com/CoeJoder/my-userscripts
+// @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/glassdoor_hardsell_buster.user.js
+// @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/glassdoor_hardsell_buster.user.js
 // @version      0.2
 // @description  Allows browsing of glassdoor.com reviews without compromising privacy.
 // @author       CoeJoder

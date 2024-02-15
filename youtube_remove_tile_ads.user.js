@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         Youtube remove tile ads
 // @namespace    https://github.com/CoeJoder/my-userscripts
-// @version      0.1
+// @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/youtube_remove_tile_ads.user.js
+// @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/youtube_remove_tile_ads.user.js
+// @version      0.3
 // @description  Removes tile ads and replaces them with a based meme image
 // @author       CoeJoder
 // @match        *://*.youtube.com/*

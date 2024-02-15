@@ -1,7 +1,9 @@
 // ==UserScript==
 // @name         PancakeSwap Documentation Style Mods
-// @namespace    https://docs.pancakeswap.finance
-// @version      0.1
+// @namespace    https://github.com/CoeJoder/my-userscripts
+// @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/pancakeswap_docs_style.user.js
+// @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/pancakeswap_docs_style.user.js
+// @version      0.2
 // @description  As the webpage isn't supported by DarkReader, apply a dark theme manually by stylesheet injection.
 // @author       CoeJoder
 // @match        *://docs.pancakeswap.finance/*
