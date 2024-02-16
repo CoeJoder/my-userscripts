@@ -14,7 +14,7 @@
 
 (async function({ sleep, wait, until, By }) {
 
-  const DEBUG = true;
+  const DEBUG = false;
   const tag = (str) => `[${GM_info.script.name}] ${str}`;
   const log = (str) => console.log(tag(str));
   const debug = (str) => DEBUG ? console.log(tag(str)) : undefined;
