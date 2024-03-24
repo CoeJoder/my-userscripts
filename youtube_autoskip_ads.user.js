@@ -3,66 +3,32 @@
 // @namespace    https://github.com/CoeJoder/my-userscripts
 // @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/youtube_autoskip_ads.user.js
 // @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/youtube_autoskip_ads.user.js
-// @version      0.3
+// @version      0.5
 // @description  Stealthily skips skippable ads on YouTube videos.
 // @author       CoeJoder
 // @match        *://www.youtube.com/
-// @match        https://www.youtube.com/watch?v=*
+// @match        *://www.youtube.com/results*
+// @match        *://www.youtube.com/watch*
+// @match        *://www.youtube.com/channel*
 // @icon         https://www.google.com/s2/favicons?domain=youtube.com
-// @require      https://cdn.jsdelivr.net/gh/CoeJoder/GM_wrench@v1.4/dist/GM_wrench.min.js
+// @require      https://cdn.jsdelivr.net/gh/CoeJoder/GM_wrench@v1.5/dist/GM_wrench.min.js
 // @grant        GM.notification
+// @grant        GM.registerMenuCommand
 // ==/UserScript==
-
-// TODO move `Logger` to GM_wrench project
-(() => {
-  function Logger(opts) {
-    opts = { ...Logger._DEFAULT_OPTS, ...opts };
-    if (!(opts.level in Logger._LEVELS)) {
-      throw new Error("Invalid log level: " + opts.level);
-    }
-    if (typeof opts.formatter !== 'function') {
-      throw new Error("Invalid formatter; expected function");
-    }
-
-    const check = (level) => Logger._LEVELS[level] >= Logger._LEVELS[opts.level];
-
-    this.trace = (str) => check('trace') ? console.log(opts.formatter(str, 'trace', opts.prefix)) : undefined;
-    this.debug = (str) => check('debug') ? console.log(opts.formatter(str, 'debug', opts.prefix)) : undefined;
-    this.info = (str) => check('info') ? console.log(opts.formatter(str, 'info', opts.prefix)) : undefined;
-    this.warn = (str) => check('warn') ? console.warn(opts.formatter(str, 'warn', opts.prefix)) : undefined;
-    this.error = (str) => check('error') ? console.error(opts.formatter(str, 'error', opts.prefix)) : undefined;
-    this.fatal = (str) => check('fatal') ? console.error(opts.formatter(str, 'fatal', opts.prefix)) : undefined;
-  }
-  Logger._LEVELS = {
-    trace: 10,
-    debug: 20,
-    info: 30,
-    warn: 40,
-    error: 50,
-    fatal: 60,
-  };
-  Logger._DEFAULT_OPTS = {
-    level: 'info',
-    prefix: GM_info.script.name,
-    formatter: (msg, level, prefix) =>
-        `${prefix !== null ? `[${prefix}]` : ''}[${level.toUpperCase()}] ${msg}`,
-  };
-  GM_wrench.Logger = Logger;
-})();
 
 (async function({ sleep, wait, TimeoutError, Logger }) {
 
   const logger = new Logger();
-  logger.info("Userscript loaded");
+  logger.info("userscript loaded");
 
   // Strategy:
   // The script will run on the homepage & watchpages in an infinite loop to handle
   // in-page navigation to (other) videos and multiple ads within a single video.
   //
   // Although the 'Skip' button exists immediately once an ad begins playing,
-  // wait until it is displayed i.e. countdown has completed, to click it as to avoid
-  // adblock detection.  Extended waiting periods e.g. when a video is paused while
-  // an ad is displayed, will have their polling intervals increased to reduce page load.
+  // wait until it is displayed to click it as to avoid adblock detection.
+  // Extended waiting periods e.g. when a video is paused while an ad is displayed,
+  // will have their polling intervals increased to reduce page load.
 
   // Algorithm:
   // 1) Infinite loop (until error threshold=3 is met):
@@ -126,7 +92,7 @@
       } catch (e) {
         // C) if timeout
         if (e instanceof TimeoutError) {
-          // C1) if ad is displayed: 3-second poll for 'Skip' to be displayed (or ad to be over), click it if exists
+          // C1) if ad displayed: 3-second poll for 'Skip' to be displayed (or ad to be over), click it if exists
           if (isAdDisplayed()) {
             logger.debug("Long ad detected. Waiting for 'Skip' to be displayed (or ad to be over)...");
             await wait({
@@ -144,8 +110,8 @@
         }
       }
     } catch (e) {
-      logger.error(e.message);
       errCount++;
+      logger.error(e.message);
     } finally {
       // D) 5-second sleep
       await sleep(POLL_INTERVAL_FIVE_SECONDS);
@@ -159,4 +125,5 @@
     title: GM_info.script.name,
   });
 })(GM_wrench);
+
 
