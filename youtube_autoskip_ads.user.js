@@ -3,7 +3,7 @@
 // @namespace    https://github.com/CoeJoder/my-userscripts
 // @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/youtube_autoskip_ads.user.js
 // @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/youtube_autoskip_ads.user.js
-// @version      0.5
+// @version      0.6
 // @description  Stealthily skips skippable ads on YouTube videos.
 // @author       CoeJoder
 // @match        *://www.youtube.com/
@@ -122,7 +122,7 @@
   logger.fatal(killMsg);
   GM.notification({
     text: killMsg,
-    title: GM_info.script.name,
+    title: GM.info.script.name,
   });
 })(GM_wrench);
 
