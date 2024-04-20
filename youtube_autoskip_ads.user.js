@@ -3,7 +3,7 @@
 // @namespace    https://github.com/CoeJoder/my-userscripts
 // @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/youtube_autoskip_ads.user.js
 // @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/youtube_autoskip_ads.user.js
-// @version      0.6
+// @version      0.7
 // @description  Stealthily skips skippable ads on YouTube videos.
 // @author       CoeJoder
 // @match        *://www.youtube.com/
@@ -42,9 +42,9 @@
   const POLL_INTERVAL_HALF_SECOND = 500;
   const POLL_INTERVAL_THREE_SECONDS = 3000;
   const POLL_TIMEOUT_TEN_SECONDS = 10000;
-  const CSS_SKIP_BUTTON = ".ytp-ad-skip-button-text";
+  const CSS_SKIP_BUTTON = ".ytp-skip-ad-button";
   const CSS_AD_MODULE = ".ytp-ad-module";
-  const CSS_SKIP_BUTTON_CONTAINER = ".ytp-ad-skip-button-container";
+  const CSS_SKIP_BUTTON_CONTAINER = ".ytp-ad-player-overlay-layout__skip-or-preview-container";
   const MAX_ERRORS = 3;
 
   const getSkipButton = () => document.querySelector(CSS_SKIP_BUTTON);
