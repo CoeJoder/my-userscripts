@@ -20,14 +20,17 @@
 			const sheet = new CSSStyleSheet();
 			sheet.replace(`
 				.banner.error {
-					background-color: ${color} !important;
+					background-color: ${banColor} !important;
 				}
 				#banner-text {
 					font-weight: bold;
 				}
 			`);
-			globalFaceplateBanner.querySelector('a.button').style.backgroundColor = color;
 			globalFaceplateBanner.shadowRoot.adoptedStyleSheets.push(sheet);
+			const inboxButton = globalFaceplateBanner.querySelector('a.button');
+			if (inboxButton !== null) {
+				inboxButton.style.backgroundColor = banColor;
+			}
 		}
 	}
 })();
