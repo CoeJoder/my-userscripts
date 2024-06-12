@@ -10,6 +10,10 @@
 // @icon         https://www.google.com/s2/favicons?domain=reddit.com
 // ==/UserScript==
 (() => {
+	/*
+	TODO this script has some kinks in it, such as not dealing with in-page navigation.
+	Can be fixed but for now just refresh page to have the changes applied
+	*/
 	const banReason = "**WARNING** REDDIT ADMINS ARE POMPOUS AND FAGGY!! **WARNING**";
 	const banColor = 'green';
 	let globalFaceplate = document.querySelector('faceplate-tracker[source=global]');
