@@ -22,7 +22,7 @@
 		globalFaceplateBanner.setAttribute('msg', banReason);
 		if (globalFaceplateBanner?.shadowRoot !== null && typeof CSSStyleSheet === 'function') {
 			const sheet = new CSSStyleSheet();
-			sheet.replace(`
+			sheet.replaceSync(`
 				.banner.error {
 					background-color: ${banColor} !important;
 				}
