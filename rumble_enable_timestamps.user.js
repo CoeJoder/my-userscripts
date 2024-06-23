@@ -3,19 +3,15 @@
 // @namespace    https://github.com/CoeJoder/my-userscripts
 // @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/rumble_enable_timestamps.user.js
 // @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/rumble_enable_timestamps.user.js
-// @version      0.3
+// @version      0.1
 // @description  Turn timestamps in the comment section into seekable links, similar to how YouTube does it.
 // @author       CoeJoder
 // @match        *://rumble.com/*.html
-// @grant        none
 // @require      https://cdn.jsdelivr.net/gh/CoeJoder/GM_wrench@v1.5/dist/GM_wrench.min.js
 // @icon         https://www.google.com/s2/favicons?domain=rumble.com
 // ==/UserScript==
 
-(function() {
-
-    //TODO pretty close, just need a way to unmute programmatically
-
+(() => {
     const commentsSelector = ".comment-text";
     const waitOnce = true;
     const interval = 200;
