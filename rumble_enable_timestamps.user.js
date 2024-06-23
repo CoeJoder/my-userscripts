@@ -14,7 +14,7 @@
 (() => {
     const commentsSelector = ".comment-text";
     const waitOnce = true;
-    const interval = 200;
+    const interval = 500;
 
     // replaces the text timestamps in comments with seek-buttons
     const processComment = (replayComment) => {
