@@ -3,7 +3,7 @@
 // @namespace   https://github.com/CoeJoder/my-userscripts
 // @homepageURL https://github.com/CoeJoder/my-userscripts/blob/master/youtube_remove_propaganda_box.user.js
 // @downloadURL https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/youtube_remove_propaganda_box.user.js
-// @version     0.4
+// @version     0.5
 // @description Removes the propaganda box that Big Brother places under "controversial" videos.
 // @author      CoeJoder
 // @match       *://www.youtube.com/watch?*
@@ -18,7 +18,6 @@
 // the propaganda if it returns e.g. while navigating to other videos.
 
 const CONTAINER_CSS = "#clarify-box";
-const PROPAGANDA_BOX_CSS = "ytd-clarification-renderer";
 
 (async ({wait}) => {
   const container = await wait({
@@ -29,9 +28,8 @@ const PROPAGANDA_BOX_CSS = "ytd-clarification-renderer";
   });
 
   const removeIfPresent = () => {
-    const propagandaBox = container.querySelector(PROPAGANDA_BOX_CSS);
-    if (propagandaBox) {
-      propagandaBox.remove();
+    for (const child of container.children) {
+      child.remove();
     }
   };
 
