@@ -1,19 +1,23 @@
 // ==UserScript==
-// @name         Yahoo! mail remove search title
+// @name         Yahoo! mail remove search title and ads
 // @namespace    https://github.com/CoeJoder/my-userscripts
 // @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/yahoomail_remove_searchtitle.user.js
 // @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/yahoomail_remove_searchtitle.user.js
-// @version      0.2
-// @description  Removes the magnifying glass popup when hovering an email subject
+// @version      0.3
+// @description  Removes the magnifying glass popup when hovering an email subject, and ad rows.
 // @author       CoeJoder
 // @match        https://mail.yahoo.com/*
 // @icon         https://www.google.com/s2/favicons?domain=mail.yahoo.com
-// @require      https://cdn.jsdelivr.net/gh/CoeJoder/GM_wrench@v1.4/dist/GM_wrench.min.js
+// @resource     absolutely_comped https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/resources/images/absolutely_comped.png
+// @grant        GM.addStyle
 // ==/UserScript==
-(async function ({ addCss }) {
-	addCss(`
+
+GM.addStyle(`
 	button[title="Search for messages with this subject"] {
 		display: none !important;
 	}
-	`);
-})(GM_wrench);
+
+  li:has(> div > [data-test-id^="pencil-ad-messageList"]) {
+		display: none !important;
+  }
+`);
