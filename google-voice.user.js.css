@@ -38,10 +38,10 @@
 	color: rgb(236, 236, 236) !important;
 }
 
-input {
+input, button, .call-button {
 	background-color: rgb(46, 49, 59) !important;
 }
 
-.call-button {
-	background-color: rgb(46, 49, 59) !important;
+header, mat-sidenav-container, .mat-drawer-container, #contact-list {
+  background-color: rgb(16, 18, 24) !important;
 }
