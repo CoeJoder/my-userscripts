@@ -1,47 +1,83 @@
+
 /*
  * Dark Theme
  * background: rgb(16, 18, 24)
  * foreground: rgb(236, 236, 236)
+ * bubble background: rgb(30, 30, 30)
+ * active background: rgb(45, 45, 45)
  * input field: rgb(46, 49, 59)
+ * placeholder: rgb(200, 200, 200)
+ * control: #444
  */
 
-/* left and middle columns */
-
-.gvMessagingView-conversationListWrap {
+/* background */
+body,
+.gvMessagingView-conversationListWrap,
+gv-thread-details,
+.gvPageRoot md-content,
+.gvCallSidebar-root,
+header,
+mat-sidenav-container,
+.mat-drawer-container,
+#contact-list,
+#gvAppBannerContainer,
+.gvThreadDetails-messageEntryContainer
+{
 	background: rgb(16, 18, 24) !important;
 }
 
-.gvPageRoot md-content {
-	 color: rgb(16, 18, 24) !important;
-}
-.gvPageRoot .gv-inbox-summary .greeting {
-	color: rgb(236, 236, 236) !important;
-}
-
-/* left column */
-
-.mat-ripple.container.read.ng-star-inserted {
-	color: rgb(236, 236, 236) !important;
-}
-
-/* right column */
-
-.gvCallSidebar-root {
-	background-color: rgb(16, 18, 24) !important;
+/* foreground */
+.gvPageRoot .gv-inbox-summary .greeting,
+gv-annotation.name,
+.primary-text,
+.title,
+.gb_td.gb_ad,
+/* header svg, */
+.phone-number-details,
+.call-as-label,
+.mat-ripple.container.read.ng-star-inserted:not(.active),
+.mat-drawer-container,
+.subject-content-container.bubble,
+.message-input-container textarea
+{
+  color: rgb(236, 236, 236) !important;
 }
 
-.phone-number-details {
-	color: rgb(236, 236, 236) !important;
+/* bubble background */
+.subject-content-container.bubble,
+.gmat-mdc-list.mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated,
+.mat-ripple.container.read.ng-star-inserted,
+button.container.row
+{
+  background-color: rgb(30, 30, 30) !important;
 }
 
-.call-as-label {
-	color: rgb(236, 236, 236) !important;
+/* active background */
+.mat-ripple.container.read.ng-star-inserted.batch-selecting.batch-selected,
+.mat-ripple.container.read.ng-star-inserted.active
+{
+  background: rgb(45, 45, 45) !important;
 }
 
-input, button, .call-button {
+/* input field */
+input, 
+button, 
+.call-button,
+.banner,
+.message-input-container textarea
+{
 	background-color: rgb(46, 49, 59) !important;
 }
 
-header, mat-sidenav-container, .mat-drawer-container, #contact-list {
-  background-color: rgb(16, 18, 24) !important;
+/* placeholder */
+input::placeholder,
+.gmat-subhead-2
+{
+  color: rgb(200, 200, 200) !important;
+}
+
+/* control */
+form.gb_id
+{
+  background: #444 !important;
 }
