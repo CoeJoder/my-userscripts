@@ -1,0 +1,47 @@
+/*
+ * Dark Theme
+ * background: rgb(16, 18, 24)
+ * foreground: rgb(236, 236, 236)
+ * input field: rgb(46, 49, 59)
+ */
+
+/* left and middle columns */
+
+.gvMessagingView-conversationListWrap {
+	background: rgb(16, 18, 24) !important;
+}
+
+.gvPageRoot md-content {
+	 color: rgb(16, 18, 24) !important;
+}
+.gvPageRoot .gv-inbox-summary .greeting {
+	color: rgb(236, 236, 236) !important;
+}
+
+/* left column */
+
+.mat-ripple.container.read.ng-star-inserted {
+	color: rgb(236, 236, 236) !important;
+}
+
+/* right column */
+
+.gvCallSidebar-root {
+	background-color: rgb(16, 18, 24) !important;
+}
+
+.phone-number-details {
+	color: rgb(236, 236, 236) !important;
+}
+
+.call-as-label {
+	color: rgb(236, 236, 236) !important;
+}
+
+input {
+	background-color: rgb(46, 49, 59) !important;
+}
+
+.call-button {
+	background-color: rgb(46, 49, 59) !important;
+}
