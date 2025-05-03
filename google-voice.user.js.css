@@ -6,6 +6,7 @@
  * active background: rgb(45, 45, 45)
  * input field: rgb(46, 49, 59)
  * placeholder: rgb(200, 200, 200)
+ * anchors: rgb(180, 200, 235)
  * control: #444
  */
 
@@ -67,6 +68,11 @@ button,
 input::placeholder,
 .gmat-subhead-2 {
   color: rgb(200, 200, 200) !important;
+}
+
+/* anchors */
+gv-annotation.content a {
+  color: rgb(180, 200, 235) !important;
 }
 
 /* control */
