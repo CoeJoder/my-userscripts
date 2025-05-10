@@ -8,6 +8,9 @@
  * placeholder: rgb(200, 200, 200)
  * anchors: rgb(180, 200, 235)
  * control: #444
+ *
+ * Other Changes
+ * hide banner: "Your browser might prevent calls from ringing."
  */
 
 /* background */
@@ -78,4 +81,9 @@ gv-annotation.content a {
 /* control */
 form.gb_id {
   background: #444 !important;
+}
+
+/* hide banner: "Your browser might prevent calls from ringing." */
+#gvAppBannerContainer:has([aria-label="learn more about browser audio"]) {
+  display: none;
 }
