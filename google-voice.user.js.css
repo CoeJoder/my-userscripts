@@ -85,5 +85,5 @@ form.gb_id {
 
 /* hide banner: "Your browser might prevent calls from ringing." */
 #gvAppBannerContainer:has([aria-label="learn more about browser audio"]) {
-  display: none;
+  display: none !important;
 }
