@@ -46,4 +46,4 @@ const observer = new MutationObserver(_ => {
 observer.observe(document.querySelector('body'), {
   childList: true,
   subtree: true,
-})
+});
