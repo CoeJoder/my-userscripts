@@ -11,6 +11,7 @@
  *
  * Other Changes
  * hide banner: "Your browser might prevent calls from ringing."
+ * hide banner: "Try one-click dialing"
  */
 
 /* background */
@@ -85,5 +86,10 @@ form.gb_id {
 
 /* hide banner: "Your browser might prevent calls from ringing." */
 #gvAppBannerContainer:has([aria-label="learn more about browser audio"]) {
+  display: none !important;
+}
+
+/* hide banner: "Try one-click dialing" */
+#gvAppBannerContainer:has([aria-label="Learn more about calling numbers linked in your browser"]) {
   display: none !important;
 }
