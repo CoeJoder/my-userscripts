@@ -8,7 +8,8 @@
 // @match        https://twitter.com/*
 // @match        https://xcancel.com/*
 // @match        https://nitter.poast.org/*
-// @version      1.3
+// @icon         https://www.google.com/s2/favicons?domain=nitter.net
+// @version      1.4
 // @run-at       document-start
 // @author       CoeJoder
 // @grant        GM.setValue
@@ -18,9 +19,8 @@
 // ==/UserScript==
 
 /*
-  twitter/x and nitter sites will all have the nitter selection menu,
-  but only twitter/x will perform the initial redirection,
-  and all sites will forward when menu selection changes the current site
+  Nitter sites will have the nitter selection menu, and only twitter/x will
+  perform the initial redirection.
 */
 
 // script storage key
@@ -30,15 +30,15 @@ const KEY_SELECTED_NITTER_INSTANCE = 'selected-nitter-instance';
 const NITTER_INSTANCES = {
   xcancel_com: 'https://xcancel.com',
   poast_org: 'https://nitter.poast.org',
-}
+};
+
+// using xcancel.com as default, as it seems quickest and works with embedded media
+const DEFAULT_NITTER_INSTANCE = NITTER_INSTANCES.xcancel_com;
 
 const TWITTER_ALIASES = [
   'https://x.com',
   'https://twitter.com',
-]
-
-// using xcancel.com as default, as it seems quickest and works with embedded media
-const DEFAULT_NITTER_INSTANCE = NITTER_INSTANCES.xcancel_com;
+];
 
 // seed the selected instance with default value
 if (typeof await GM.getValue(KEY_SELECTED_NITTER_INSTANCE) === 'undefined') {
@@ -55,16 +55,16 @@ const goToNitterIfNotAlreadyThere = async (instance) => {
   }
 };
 
-// populate the nitter selection menu
-for (const [key, value] of Object.entries(NITTER_INSTANCES))  {
-  GM.registerMenuCommand(key, async () => {
-    console.log(`Setting nitter instance to: ${key}`);
-    await GM.setValue(KEY_SELECTED_NITTER_INSTANCE, value);
-    goToNitterIfNotAlreadyThere(value);
-  });
-}
-
-// initial redirection from twitter/x only
 if (Object.values(TWITTER_ALIASES).includes(window.location.origin)) {
+  // initial redirection
   goToNitterIfNotAlreadyThere();
+} else {
+  // populate the nitter selection menu
+  for (const value of Object.values(NITTER_INSTANCES))  {
+    GM.registerMenuCommand(value, async () => {
+      console.log(`Setting nitter instance to: ${value}`);
+      await GM.setValue(KEY_SELECTED_NITTER_INSTANCE, value);
+      goToNitterIfNotAlreadyThere(value);
+    });
+  }
 }
