@@ -9,7 +9,7 @@
 // @match        https://xcancel.com/*
 // @match        https://nitter.poast.org/*
 // @icon         https://www.google.com/s2/favicons?domain=nitter.net
-// @version      1.4
+// @version      1.5
 // @run-at       document-start
 // @author       CoeJoder
 // @grant        GM.setValue
@@ -40,15 +40,15 @@ const TWITTER_ALIASES = [
   'https://twitter.com',
 ];
 
-// seed the selected instance with default value
-if (typeof await GM.getValue(KEY_SELECTED_NITTER_INSTANCE) === 'undefined') {
-  await GM.setValue(KEY_SELECTED_NITTER_INSTANCE, DEFAULT_NITTER_INSTANCE);
-}
-
 const goToNitterIfNotAlreadyThere = async (instance) => {
   if (typeof instance === 'undefined') {
-    // incognito mode may not have access to script storage
-    instance = await GM.getValue(KEY_SELECTED_NITTER_INSTANCE) ?? DEFAULT_NITTER_INSTANCE;
+    // if saved instance is not in the current list,
+    // or if script storage inaccessible (e.g., incognito mode),
+    // then use default instance
+    instance = await GM.getValue(KEY_SELECTED_NITTER_INSTANCE);
+    if (!Object.values(NITTER_INSTANCES).includes(instance)) {
+      instance = DEFAULT_NITTER_INSTANCE;
+    }
   }
   if (window.location.origin !== instance) {
     window.location.replace(instance + window.location.pathname + window.location.search);
