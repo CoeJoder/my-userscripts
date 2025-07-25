@@ -1,10 +1,13 @@
+// THIS SCRIPT IS DEPRECATED
+// Rumble has finally integrated this feature natively 🎉
+
 // ==UserScript==
 // @name        rumble: enable timestamps
 // @namespace   https://github.com/CoeJoder/my-userscripts
 // @homepageURL https://github.com/CoeJoder/my-userscripts/blob/master/rumble_enable_timestamps.user.js
 // @downloadURL https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/rumble_enable_timestamps.user.js
 // @version     0.3
-// @description Turn timestamps in the comment section into seekable links, similar to how YouTube does it.
+// @description **DEPRECATED** Turn timestamps in the comment section into seekable links, similar to how YouTube does it.
 // @author      CoeJoder
 // @match       *://rumble.com/*.html
 // @require     https://cdn.jsdelivr.net/gh/CoeJoder/GM_wrench@v1.5/dist/GM_wrench.min.js
