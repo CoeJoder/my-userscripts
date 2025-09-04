@@ -8,7 +8,7 @@
 // @author      CoeJoder
 // @match       *://www.biblegateway.com/*
 // @icon        https://www.google.com/s2/favicons?domain=biblegateway.com/
-// @resource    IMPORTED_CSS https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts@f3063fa2/biblegateway.user.js.css
+// @resource    IMPORTED_CSS https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts@cd1d4579/biblegateway.user.js.css
 // @grant       GM_getResourceText
 // @grant       GM_addStyle
 // @run-at      document-body
