@@ -3,7 +3,16 @@
  *
  * Source: https://chromewebstore.google.com/detail/dark-mode-for-deepl/lgldkcjfjjfbbfdibpnloponileegnbd
  * Extracted using: https://github.com/Rob--W/crxviewer
+ *
+ * Other Changes:
+ *  - hide frontpage slop
  */
+
+ /* hide frontpage slop */
+[class^="homeExperience_homeExperience"],
+[class*=" homeExperience_homeExperience"] {
+  display: none !important;
+}
 
 body,
 body * {
