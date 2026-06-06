@@ -8,7 +8,7 @@
 // @author      CoeJoder
 // @match       *://www.deepl.com/*
 // @icon        https://www.google.com/s2/favicons?domain=deepl.com/
-// @resource    IMPORTED_CSS https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts@4e2e0d06/deepl.user.js.css
+// @resource    IMPORTED_CSS https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts@e2894ed5/deepl.user.js.css
 // @grant       GM_getResourceText
 // @grant       GM_addStyle
 // @run-at      document-body
