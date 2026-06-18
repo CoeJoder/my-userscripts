@@ -8,7 +8,7 @@
 // @author       CoeJoder
 // @match        *://voice.google.com/*
 // @icon         https://fonts.gstatic.com/s/i/productlogos/voice_2020q4/v1/web-32dp/logo_voice_2020q4_color_1x_web_32dp.png
-// @resource     IMPORTED_CSS https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts@257dd5c1/google-voice.user.js.css
+// @resource     IMPORTED_CSS https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts@dddc9e6f/google-voice.user.js.css
 // @grant        GM_getResourceText
 // @grant        GM_addStyle
 // @run-at       document-body
