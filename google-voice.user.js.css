@@ -1,17 +1,10 @@
 /*
- * Dark Theme (original, deprecated)
- * background: rgb(16, 18, 24)
- * foreground: rgb(236, 236, 236)
- * bubble background: rgb(30, 30, 30)
- * active background: rgb(45, 45, 45)
- * input field: rgb(46, 49, 59)
- * placeholder: rgb(200, 200, 200)
- * anchors: rgb(180, 200, 235)
- * control: #444
+ * Dark Theme
  *
  * Other Changes
- * hide banner: "Your browser might prevent calls from ringing."
- * hide banner: "Try one-click dialing"
+ * - improve header colors
+ * - hide banner: "Your browser might prevent calls from ringing."
+ * - hide banner: "Try one-click dialing"
  */
 
 /* known color variables */
