@@ -1,17 +1,11 @@
 /*
- * Dark Theme (original, deprecated)
- * background: rgb(16, 18, 24)
- * foreground: rgb(236, 236, 236)
- * bubble background: rgb(30, 30, 30)
- * active background: rgb(45, 45, 45)
- * input field: rgb(46, 49, 59)
- * placeholder: rgb(200, 200, 200)
- * anchors: rgb(180, 200, 235)
- * control: #444
+ * Dark Theme
  *
  * Other Changes
- * hide banner: "Your browser might prevent calls from ringing."
- * hide banner: "Try one-click dialing"
+ * - dark grey background: header
+ * - light grey text: logo, search box
+ * - hide banner: "Your browser might prevent calls from ringing."
+ * - hide banner: "Try one-click dialing"
  */
 
 /* known color variables */
@@ -22,6 +16,7 @@
   --mat-card-filled-container-color      dark grey
   --mat-card-filled-container-shape
   --mat-sys-background                   dark grey
+  --mat-sys-on-background                light grey (font)
   --mat-sys-corner-medium
   --mat-card-filled-container-elevation  
   --mat-sys-level0
@@ -39,14 +34,20 @@ body,
 
 /* The rest of the rules are modifications to the built-in dark theme */
 
-/* background */
+/* header */
 header {
   background-color: var(--mat-sys-background) !important;
 }
 
-form[action="/search"] {
-    background-color: field !important;
-    color: fieldtext !important;
+/* logo */
+header a[aria-label="Google Voice"] span {
+  color: var(--mat-sys-on-background) !important;
+}
+
+/* search box */
+header input[aria-label="Search"],
+header input[aria-label="Search"]::placeholder {
+  color: fieldtext;
 }
 
 /* hide banner: "Your browser might prevent calls from ringing." */
