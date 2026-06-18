@@ -1,5 +1,5 @@
 /*
- * Dark Theme
+ * Dark Theme (original, deprecated)
  * background: rgb(16, 18, 24)
  * foreground: rgb(236, 236, 236)
  * bubble background: rgb(30, 30, 30)
@@ -14,74 +14,39 @@
  * hide banner: "Try one-click dialing"
  */
 
-/* background */
+/* known color variables */
+/*
+  --mat-sys-surface-container-highest    light grey
+  --mat-sys-surface-container            medium grey
+  --mat-sys-surface-container-low        medium grey
+  --mat-card-filled-container-color      dark grey
+  --mat-card-filled-container-shape
+  --mat-sys-background                   dark grey
+  --mat-sys-corner-medium
+  --mat-card-filled-container-elevation  
+  --mat-sys-level0
+*/
+
+/* forcibly apply the hidden "dark theme" feature */
+:root,
+html,
 body,
-.gvMessagingView-conversationListWrap,
-gv-thread-details,
-.gvPageRoot md-content,
-.gvCallSidebar-root,
-header,
-mat-sidenav-container,
-.mat-drawer-container,
-#contact-list,
-#gvAppBannerContainer,
-.gvThreadDetails-messageEntryContainer {
-  background: rgb(16, 18, 24) !important;
+*,
+::before,
+::after {
+  color-scheme: dark !important;
 }
 
-/* foreground */
-.gvPageRoot .gv-inbox-summary .greeting,
-gv-annotation.name,
-.primary-text,
-.title,
-.gb_td.gb_ad,
-/* header svg, */
-.phone-number-details,
-.call-as-label,
-.mat-ripple.container.read.ng-star-inserted:not(.active),
-.mat-drawer-container,
-.subject-content-container.bubble,
-.message-input-container textarea {
-  color: rgb(236, 236, 236) !important;
+/* The rest of the rules are modifications to the built-in dark theme */
+
+/* background */
+header {
+  background-color: var(--mat-sys-background) !important;
 }
 
-/* bubble background */
-.subject-content-container.bubble,
-.gmat-mdc-list.mat-mdc-nav-list .mat-mdc-list-item.mdc-list-item--activated,
-.mat-ripple.container.read.ng-star-inserted,
-button.container.row {
-  background-color: rgb(30, 30, 30) !important;
-}
-
-/* active background */
-.mat-ripple.container.read.ng-star-inserted.batch-selecting.batch-selected,
-.mat-ripple.container.read.ng-star-inserted.active {
-  background: rgb(45, 45, 45) !important;
-}
-
-/* input field */
-input,
-button,
-.call-button,
-.banner,
-.message-input-container textarea {
-  background-color: rgb(46, 49, 59) !important;
-}
-
-/* placeholder */
-input::placeholder,
-.gmat-subhead-2 {
-  color: rgb(200, 200, 200) !important;
-}
-
-/* anchors */
-gv-annotation.content a {
-  color: rgb(180, 200, 235) !important;
-}
-
-/* control */
-form.gb_id {
-  background: #444 !important;
+form[action="/search"] {
+    background-color: field !important;
+    color: fieldtext !important;
 }
 
 /* hide banner: "Your browser might prevent calls from ringing." */
@@ -90,6 +55,8 @@ form.gb_id {
 }
 
 /* hide banner: "Try one-click dialing" */
-#gvAppBannerContainer:has([aria-label="Learn more about calling numbers linked in your browser"]) {
+#gvAppBannerContainer:has(
+  [aria-label="Learn more about calling numbers linked in your browser"]
+) {
   display: none !important;
 }
