@@ -3,7 +3,7 @@
 // @namespace    https://github.com/CoeJoder/my-userscripts
 // @homepageURL  https://github.com/CoeJoder/my-userscripts/blob/master/nitter_redirect.user.js
 // @downloadURL  https://cdn.jsdelivr.net/gh/CoeJoder/my-userscripts/nitter_redirect.user.js
-// @description  Redirect all X/Twitter links through a Nitter instance
+// @description  (NOTE: X has banned Nitter as of Aug 2026) Redirect all X/Twitter links through a Nitter instance.
 // @match        https://x.com/*
 // @match        https://twitter.com/*
 // @match        https://xcancel.com/*
@@ -26,7 +26,7 @@
 // script storage key
 const KEY_SELECTED_NITTER_INSTANCE = 'selected-nitter-instance';
 
-/// known working Nitter instances
+// known working Nitter instances
 const NITTER_INSTANCES = {
   xcancel_com: 'https://xcancel.com',
   poast_org: 'https://nitter.poast.org',
